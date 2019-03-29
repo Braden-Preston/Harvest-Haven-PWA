@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/styles": "^3.0.0-alpha.10",
+    "@material-ui/system": "^3.0.0-alpha.2",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
     "react": "^16.8.6",
