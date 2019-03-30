@@ -1,7 +1,23 @@
+import '@storybook/addon-console';
 import { configure } from '@storybook/react';
+import { addParameters } from '@storybook/react';
+
+addParameters({ viewport: {
+  defaultViewport: 'responsive',
+} });
+
+const req = require.context('../src/components', true, /\.stories\.jsx$/);
+
+// addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
 
 function loadStories() {
-  require('../src/stories');
+  req.keys().forEach(filename => req(filename));
 }
 
+// function loadStories() {
+//   require('../src/components');
+// }
 configure(loadStories, module);
+
+
+// configure(loadStories, module);
