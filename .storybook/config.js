@@ -6,7 +6,7 @@ addParameters({ viewport: {
   defaultViewport: 'responsive',
 } });
 
-const req = require.context('../src/components', true, /\.stories\.jsx$/);
+const req = require.context('../src/stories', true, /\.stories\.jsx$/);
 
 // addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
 

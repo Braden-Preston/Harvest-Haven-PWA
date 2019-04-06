@@ -3,7 +3,7 @@ import { storiesOf, addDecorator } from '@storybook/react';
 import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import Task from './Task';
+import Task from '../components/Task';
 
 export const task = {
   id: '1',

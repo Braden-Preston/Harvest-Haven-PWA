@@ -3,6 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  runFetch() {
+    fetch('/test').then((response) => {
+      console.log(response)
+      console.log(response.body)
+      console.log(`Fetch --> Response: ${response.body}`)
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -11,6 +19,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
+          <button onClick={this.runFetch}>Fetch</button>
           <a
             className="App-link"
             href="https://reactjs.org"
