@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { inject } from 'mobx-react';
 
 class App extends Component {
-  runFetch() {
-    fetch('/test').then((response) => {
-      console.log(response)
-      console.log(response.body)
-      console.log(`Fetch --> Response: ${response.body}`)
-    })
+
+  componentDidMount() {
+    this.props.forage.videos.init()
   }
 
   render() {
+    const { forage } = this.props
+    const { videos } = forage
     return (
       <div className="App">
         <header className="App-header">
@@ -19,7 +19,9 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <button onClick={this.runFetch}>Fetch</button>
+          <button onClick={videos.get}>Fetch</button>
+          <button onClick={videos.clear}>Clear</button>
+          <button onClick={videos.drop}>Drop</button>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -34,4 +36,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default inject('forage')(App);
